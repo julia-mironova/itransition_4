@@ -1,26 +1,26 @@
 import React from "react";
-import { Header } from "./header/Header.jsx";
-import { Main } from "./main/Main.jsx";
-import { Footer } from "./footer/Footer.jsx";
-import { Login } from "./login/Login.jsx";
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import UsersPage from "./pages/UsersPage";
 
 class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      isLogin: false
+      isLogin: true
     }
   }
+
   render() {
     return (
-    <div className="App">
-      <Header />
-        {this.state.isLogin && <Main />}
-        {!this.state.isLogin && <Login />}
-      <Footer />
-    </div>
-  );
+     <BrowserRouter>
+      <Routes>
+          {this.state.isLogin && <Route path='/users' element={<UsersPage isLogin={this.state.isLogin} />} />}
+          <Route path='/' element={<LoginPage isLogin={this.state.isLogin} />} />
+          <Route path='*' element={<LoginPage isLogin={this.state.isLogin} />} />
+      </Routes>
+    </BrowserRouter>
+    );
   }
   
 }
