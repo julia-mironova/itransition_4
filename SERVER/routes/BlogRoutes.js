@@ -6,15 +6,10 @@ const {
   updateBlog,
   deleteBlog,
 } = require("../controllers/BlogController");
- 
+
 const router = express.Router();
- 
-router.route("/")
-  .get(getAllBlogs)
-  .post(createBlog);
-router.route("/:id")
-  .get(getBlogById)
-  .put(updateBlog)
-  .delete(deleteBlog);
- 
+
+router.route("/").get(getAllBlogs).post(createBlog);
+router.route("/:id").get(getBlogById).put(updateBlog).delete(deleteBlog);
+
 module.exports = router;
