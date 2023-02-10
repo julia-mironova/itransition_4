@@ -1,0 +1,5 @@
+{
+  "serverPort": 3500,
+  "dbURL": "mongodb+srv://Yuliya:19882015@cluster0.xojzdzm.mongodb.net/?retryWrites=true&w=majority",
+  "secretKey": "gamyoprz"
+}
